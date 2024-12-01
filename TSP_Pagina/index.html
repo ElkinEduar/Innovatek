@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Innovatek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-dark text-light py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="logo m-0">Innovatek</h1>
+            <nav>
+                <a href="#categorias" class="text-light mx-3">Categorías</a>
+                <a href="#productos" class="text-light mx-3">Productos</a>
+                <a href="#contacto" class="text-light mx-3">Contacto</a>
+            </nav>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar productos" aria-label="Search" />
+                <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form>
+            <!-- Carrito de compras -->
+            <div class="position-relative">
+                <button class="btn btn-outline-light position-relative" id="carrito-button" data-bs-toggle="modal" data-bs-target="#carritoModal">
+                    <i class="bi bi-cart"></i> Carrito
+                    <span class="badge bg-danger position-absolute top-0 end-0 translate-middle" id="carrito-count">0</span>
+                </button>
+            </div>
+            
+
+            <!-- Modal del carrito -->
+            <div class="modal" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group" id="carrito">
+                                <!-- Aquí aparecerán los productos añadidos -->
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" onclick="procederAlPago()">Proceder al
+                                Pago</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Landing Page -->
+    <main>
+        <!-- Slider -->
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="IMAGES/slider1.png" class="d-block w-100" alt="Promoción 1" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Promoción de Procesadores</h5>
+                        <p>Hasta un 20% de descuento en procesadores AMD y Ryzen.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="IMAGES/slider2.png" class="d-block w-100" alt="Promoción 2" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Accesorios Gamer</h5>
+                        <p>Encuentra teclados, mouse y más.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="IMAGES/slider3.png" class="d-block w-100" alt="Promoción 3" />
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Monitores Full HD</h5>
+                        <p>Perfectos para trabajo y juegos.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- Categorías -->
+        <section id="categorias" class="py-5 text-center">
+            <div class="container">
+                <h2 style="padding: 50px; font-weight: bold">Categorías</h2>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card">
+                            <img src="IMAGES/procesadores.jpg" class="card-img-top" alt="Procesadores" />
+                            <div class="card-body">
+                                <h5 class="card-title">Procesadores</h5>
+                                <a href="#" class="btn btn-primary">Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card">
+                            <img src="IMAGES/product2.jpg" class="card-img-top" alt="Memorias RAM" />
+                            <div class="card-body">
+                                <h5 class="card-title">Memorias RAM</h5>
+                                <a href="#" class="btn btn-primary">Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card">
+                            <img src="IMAGES/monitores.jpg" class="card-img-top" alt="Memorias RAM" />
+                            <div class="card-body">
+                                <h5 class="card-title">Monitores</h5>
+                                <a href="#" class="btn btn-primary">Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card">
+                            <img src="IMAGES/accesorios.jpg" class="card-img-top" alt="Memorias RAM" />
+                            <div class="card-body">
+                                <h5 class="card-title">Accesorios</h5>
+                                <a href="#" class="btn btn-primary">Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card">
+                            <img src="IMAGES/gamer.jpg" class="card-img-top" alt="Memorias RAM" />
+                            <div class="card-body">
+                                <h5 class="card-title">Gamer</h5>
+                                <a href="#" class="btn btn-primary">Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card">
+                            <img src="IMAGES/audio.jpg" class="card-img-top" alt="Memorias RAM" />
+                            <div class="card-body">
+                                <h5 class="card-title">Audio</h5>
+                                <a href="#" class="btn btn-primary">Ver productos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Añade si quieres más categorías aquí -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos -->
+        <section id="productos" class="py-5">
+            <div class="container">
+                <h2 class="text-center" style="padding: 50px; font-weight: bold">
+                    Productos Destacados
+                </h2>
+                <div class="row g-4">
+                    <!-- Los productos se generarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Innovatek. Todos los derechos reservados.</p>
+            <div>
+                <a href="#" class="text-light mx-2">Facebook</a>
+                <a href="#" class="text-light mx-2">Twitter</a>
+                <a href="#" class="text-light mx-2">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
